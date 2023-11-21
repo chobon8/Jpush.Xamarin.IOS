@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0-ios</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+	<Configurations>Debug;Staging;Release</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="libJCore.a">
+      <Kind>Static</Kind>
+      <SmartLink>True</SmartLink>
+      <LinkerFlags>-lz -lresolv</LinkerFlags>
+    </NativeReference>
+    <NativeReference Include="libJPush.a">
+      <Kind>Static</Kind>
+      <SmartLink>True</SmartLink>
+    </NativeReference>
+  </ItemGroup>
+</Project>
